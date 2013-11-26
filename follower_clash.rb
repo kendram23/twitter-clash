@@ -17,15 +17,26 @@ puts kendra
 # don = UserComparer::User.new('DonDrums')
 # puts don
 
-puts "#{andy.username}'s follower count: #{andy.followers}"
-puts "#{kendra.username}'s follower count: #{kendra.followers}"
-# puts "#{tejas.username}'s follower count: #{tejas.followers}"
-# puts "#{matt.username}'s follower count: #{matt.followers}"
-# puts "#{don.username}'s follower count: #{don.followers}"
-puts "#{andy.username}'s follower count: #{andy.following}"
-puts "#{kendra.username}'s follower count: #{kendra.following}"
-
 new_comparison = UserComparer::Comparer.new(andy, kendra)
+
+puts ""
+puts "------------  Follower Count  -----------------"
+puts "#{andy.display_name}'s follower count: #{andy.followers}"
+puts "#{kendra.display_name}'s follower count: #{kendra.followers}"
 new_comparison.compare_followers(andy, kendra)
+
+puts ""
+puts "------------  Following Count  -----------------"
+puts "#{andy.display_name}'s following count: #{andy.following}"
+puts "#{kendra.display_name}'s following count: #{kendra.following}"
 new_comparison.compare_following(andy, kendra)
+
+puts ""
+puts "------------  Tweet Count  -----------------"
+puts "#{andy.display_name}'s tweet count: #{andy.following}"
+puts "#{kendra.display_name}'s tweet count: #{kendra.following}"
+new_comparison.compare_tweets(andy, kendra)
+
+puts ""
+puts "--------  Follower/Following Ratio  --------"
 new_comparison.follow_ratio(andy, kendra)
