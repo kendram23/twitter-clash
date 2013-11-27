@@ -40,3 +40,12 @@ new_comparison.compare_tweets(andy, kendra)
 puts ""
 puts "--------  Follower/Following Ratio  --------"
 new_comparison.follow_ratio(andy, kendra)
+
+puts ""
+puts "----------  Last Tweet by User  ------------"
+new_comparison.post_tweet(andy, kendra)
+
+
+
+
+

@@ -32,6 +32,10 @@ module UserComparer
 			@client.user(@username).statuses_count
 		end
 
+		def last_tweet
+			@client.user(@username).status.text
+		end
+
 	end
 
 	class Comparer
@@ -77,6 +81,11 @@ module UserComparer
 			puts "#{user1.display_name} has a ratio of #{user1_ratio} followers to following"
 			user2_ratio = user2.followers/user2.following
 			puts "#{user2.display_name} has a ratio of #{user2_ratio} followers to following"
+		end
+
+		def post_tweet(user1, user2)
+			puts "#{user1.display_name}'s last tweet: " + user1.last_tweet.to_s
+			puts "#{user2.display_name}'s last tweet: " + user2.last_tweet.to_s
 		end
 	end
 end
